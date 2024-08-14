@@ -1,16 +1,15 @@
 # Prioritize Dart as the primary language
 *.dart linguist-language=Dart
 
-# Treat all Android and iOS native files as vendored to avoid them being counted in the language statistics
-android/app/src/main/kotlin/** linguist-vendored
-ios/Runner/AppDelegate.swift linguist-vendored
+# Mark all CMake-related files as vendored
+*.cmake linguist-vendored
+CMakeLists.txt linguist-vendored
 
-# Mark other commonly used build or configuration files as vendored
+# Vendoring C++ and header files to avoid skewing language detection
 *.h linguist-vendored
 *.cpp linguist-vendored
-*.cmake linguist-vendored
 
-# Vendoring the entire iOS and Android directories if they contain significant non-Dart files
-ios/** linguist-vendored
+# Vendoring the entire Android and iOS directories, which include native code
 android/** linguist-vendored
+ios/** linguist-vendored
 
