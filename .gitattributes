@@ -1,17 +1,12 @@
-# Force Dart to be recognized as the primary language
+# Treat all Dart files as Dart language
 *.dart linguist-language=Dart
 
-# Mark all CMake and C++ related files as vendored to deprioritize them
-*.cmake linguist-vendored
+# Ignore CMake files for language statistics
 CMakeLists.txt linguist-vendored
-*.cpp linguist-vendored
-*.h linguist-vendored
+*.cmake linguist-vendored
 
-# Vendoring the entire Android and iOS directories to ignore native code
-android/** linguist-vendored
+# Ignore other build-related files that might be detected as primary language
 ios/** linguist-vendored
-
-# If you have a directory where these files reside, mark them as vendored
-cpp/** linguist-vendored
-
-
+android/** linguist-vendored
+*.h linguist-vendored
+*.cpp linguist-vendored
